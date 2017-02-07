@@ -8,10 +8,14 @@ package:
 source:
   url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.gz
   md5:  {{ md5 }}
+  patches:
+    - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
+    - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
+    - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
 
 requirements:
