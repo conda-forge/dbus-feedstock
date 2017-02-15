@@ -7,7 +7,7 @@ LDFLAGS=-L${PREFIX}/lib      \
               --disable-systemd \
               --disable-selinux \
               --disable-xml-docs
-make
+make -j${CPU_COUNT}
 make check
 make install
 
