@@ -1,5 +1,5 @@
-{% set version = "1.11.0" %}
-{% set sha256 = "6da762d768f061da720a2acfe0b481f31ef72f88aa10243922789c6ab19d5556" %}
+{% set version = "1.13.0" %}
+{% set sha256 = "837abf414c0cdac4c8586ea6f93a999446470b10abcfeefe19ed8a7921854d2e" %}
 
 package:
   name: dbus
