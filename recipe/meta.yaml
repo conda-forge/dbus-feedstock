@@ -24,7 +24,9 @@ requirements:
     - pkg-config
   host:
     - expat
-    - python
+    # Pin to a specific Python version to avoid
+    # a huge build matrix
+    - python 3.6*
   run:
     - expat
 
