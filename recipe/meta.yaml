@@ -22,11 +22,9 @@ requirements:
   build:
     - {{ compiler('c') }}
     - pkg-config
+    - python
   host:
     - expat
-    # Pin to a specific Python version to avoid
-    # a huge build matrix
-    - python 3.6*
   run:
     - expat
 
