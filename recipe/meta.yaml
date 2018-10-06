@@ -15,16 +15,16 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1000
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
     - {{ compiler('c') }}
     - pkg-config
+    - python
   host:
     - expat
-    - python
   run:
     - expat
 
