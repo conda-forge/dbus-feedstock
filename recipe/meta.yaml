@@ -1,5 +1,5 @@
-{% set version = "1.13.2" %}
-{% set sha256 = "945deb349a7e2999184827c17351c1bf93c6395b9c3ade0c91cad42cb93435b1" %}
+{% set version = "1.13.6" %}
+{% set sha256 = "b533693232d36d608a09f70c15440c1816319bac3055433300d88019166c1ae4" %}
 
 package:
   name: dbus
@@ -16,7 +16,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
