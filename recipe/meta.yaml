@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - pkg-config
     - python
+    - make  # [unix]
   host:
     - expat
   run:
