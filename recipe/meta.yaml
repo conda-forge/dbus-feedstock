@@ -1,5 +1,4 @@
-{% set version = "1.13.0" %}
-{% set sha256 = "837abf414c0cdac4c8586ea6f93a999446470b10abcfeefe19ed8a7921854d2e" %}
+{% set version = "1.13.6" %}
 
 package:
   name: dbus
@@ -7,26 +6,30 @@ package:
 
 source:
   url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.gz
-  sha256:  {{ sha256 }}
+  sha256:  b533693232d36d608a09f70c15440c1816319bac3055433300d88019166c1ae4
   patches:
-    - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
-    - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
-    - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
+    - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
+    - patches/0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
+    - patches/0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
+    - patches/0004-disable-fd-limit-tests-not-supported-in-docker.patch  # [linux]
 
 build:
   skip: true  # [win]
-  number: 1000
-  detect_binary_files_with_prefix: true
+  number: 0
+  run_exports:
+    # Has maintained compatibility basically forever.
+    #    https://abi-laboratory.pro/tracker/timeline/dbus/
+    - {{ pin_subpackage('dbus') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - pkg-config
-    - python
-    - make  # [unix]
   host:
+    - glib
     - expat
   run:
+    - glib
     - expat
 
 test:
@@ -36,7 +39,7 @@ test:
 
 about:
   home: http://www.freedesktop.org/wiki/Software/dbus/
-  license: GPL2
+  license: GPL-2.0
   license_file: COPYING
   summary: "Simple message bus system for applications to talk to one another"
   description: |
@@ -54,3 +57,4 @@ extra:
     - mingwandroid
     - ccordoba12
     - nehaljwani
+    - ocefpaf
