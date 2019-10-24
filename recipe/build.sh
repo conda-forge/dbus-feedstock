@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -f ${PREFIX}/lib/*.la
 
 CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
 LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"  \
