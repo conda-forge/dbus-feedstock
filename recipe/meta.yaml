@@ -1,5 +1,4 @@
 {% set version = "1.13.12" %}
-{% set sha256 = "7588649b56dd257c6a5f85a8c45aa2dfdf9e99f4de3983710f452081ca43eca6" %}
 
 package:
   name: dbus
@@ -7,12 +6,12 @@ package:
 
 source:
   url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.xz
-  sha256:  {{ sha256 }}
+  sha256: 7588649b56dd257c6a5f85a8c45aa2dfdf9e99f4de3983710f452081ca43eca6
   patches:
-    - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
-    - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
-    - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
-    - 0004-disable-fd-limit-tests-not-supported-in-docker.patch        # [linux]
+    - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
+    - patches/0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
+    - patches/0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
+    - patches/0004-disable-fd-limit-tests-not-supported-in-docker.patch  # [linux]
 
 build:
   skip: true  # [win]
