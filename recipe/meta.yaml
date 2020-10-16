@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
@@ -25,6 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - pkg-config
+    - make
   host:
     - glib
     - expat
@@ -39,7 +40,7 @@ test:
 
 about:
   home: http://www.freedesktop.org/wiki/Software/dbus/
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_file: COPYING
   summary: "Simple message bus system for applications to talk to one another"
   description: |
