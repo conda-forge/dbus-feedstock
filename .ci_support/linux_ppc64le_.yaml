@@ -11,7 +11,9 @@ docker_image:
 expat:
 - '2.2'
 glib:
-- '2.58'
+- 2.64.6
 pin_run_as_build:
   expat:
     max_pin: x.x
+target_platform:
+- linux-ppc64le
