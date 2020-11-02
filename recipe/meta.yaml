@@ -23,6 +23,7 @@ build:
 
 requirements:
   build:
+    - libtool  # [unix]
     - {{ compiler('c') }}
     - pkg-config
     - make
