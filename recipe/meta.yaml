@@ -20,9 +20,12 @@ build:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
     - {{ pin_subpackage('dbus') }}
+  skip_compile_pyc:
+    - share/doc/dbus/examples/GetAllMatchRules.py
 
 requirements:
   build:
+    - libtool  # [unix]
     - {{ compiler('c') }}
     - pkg-config
     - make
