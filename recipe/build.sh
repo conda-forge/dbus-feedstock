@@ -2,6 +2,8 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
+rm -f ${PREFIX}/lib/*.la
+
 CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
 LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"  \
   ./configure --prefix=${PREFIX}   \
