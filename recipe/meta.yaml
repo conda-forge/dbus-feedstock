@@ -25,6 +25,10 @@ build:
 
 requirements:
   build:
+    - autoconf          # [ppc64le]
+    - autoconf-archive  # [ppc64le]
+    - automake          # [ppc64le]
+    - sed               # [ppc64le]
     - libtool  # [unix]
     - {{ compiler('c') }}
     - pkg-config
