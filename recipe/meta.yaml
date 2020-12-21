@@ -1,12 +1,12 @@
-{% set version = "1.13.6" %}
+{% set version = "1.13.18" %}
 
 package:
   name: dbus
   version: {{ version }}
 
 source:
-  url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.gz
-  sha256:  b533693232d36d608a09f70c15440c1816319bac3055433300d88019166c1ae4
+  url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.xz
+  sha256: 8078f5c25e34ab907ce06905d969dc8ef0ccbec367e1e1707c7ecf8460f4254e
   patches:
     - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
     - patches/0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   run_exports:
     # Has maintained compatibility basically forever.
     #    https://abi-laboratory.pro/tracker/timeline/dbus/
@@ -25,14 +25,15 @@ build:
 
 requirements:
   build:
+    - autoconf          # [ppc64le]
+    - autoconf-archive  # [ppc64le]
+    - automake          # [ppc64le]
+    - sed               # [ppc64le]
     - libtool  # [unix]
     - {{ compiler('c') }}
     - pkg-config
     - make
   host:
-    - glib
-    - expat
-  run:
     - glib
     - expat
 
