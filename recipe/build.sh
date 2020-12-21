@@ -4,14 +4,13 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
 rm -f ${PREFIX}/lib/*.la
 
-CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
-LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib"  \
-  ./configure --prefix=${PREFIX}   \
-              --disable-systemd    \
-              --disable-selinux    \
-              --disable-xml-docs   \
-              --with-launchd-agent-dir=${PREFIX}  \
-              --without-x
+./configure \
+  --prefix=${PREFIX}   \
+  --disable-systemd    \
+  --disable-selinux    \
+  --disable-xml-docs   \
+  --without-x          \
+  --with-launchd-agent-dir=${PREFIX}
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 if [[ $(uname) != Darwin ]]; then
