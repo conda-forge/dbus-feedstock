@@ -32,9 +32,6 @@ requirements:
   host:
     - glib
     - expat
-  run:
-    - glib
-    - expat
 
 test:
   commands:
