@@ -15,11 +15,6 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64
 expat:
-- '2.3'
-glib:
 - '2'
-pin_run_as_build:
-  expat:
-    max_pin: x.x
 target_platform:
 - linux-aarch64
