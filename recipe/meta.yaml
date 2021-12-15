@@ -30,7 +30,7 @@ requirements:
     - pkg-config
     - make
   host:
-    - libglib
+    - glib
     - expat
 
 test:
