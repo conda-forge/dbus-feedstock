@@ -12,5 +12,7 @@ docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 expat:
 - '2'
+glib:
+- '2'
 target_platform:
 - linux-ppc64le
