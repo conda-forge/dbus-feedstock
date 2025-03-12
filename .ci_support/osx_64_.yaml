@@ -1,21 +1,22 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.13'
+MACOSX_SDK_VERSION:
+- '10.13'
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '18'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
+dbus:
+- '1'
 expat:
-- '2.2'
+- '2'
 glib:
-- '2.58'
+- '2'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
-pin_run_as_build:
-  expat:
-    max_pin: x.x
+target_platform:
+- osx-64
