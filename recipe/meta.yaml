@@ -9,7 +9,6 @@ source:
   sha256:  0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2
   patches:
     - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]
-    - patches/0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]
     - patches/0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]
     - patches/0004-disable-fd-limit-tests-not-supported-in-docker.patch  # [linux]
 
@@ -25,14 +24,16 @@ build:
 
 requirements:
   build:
-    - libtool  # [unix]
+    # - libtool  # [unix]
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
     - pkg-config
-    - make
+    - meson
   host:
     - glib
     - expat
+    - zlib
 
 test:
   commands:
