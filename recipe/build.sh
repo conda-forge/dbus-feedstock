@@ -2,9 +2,8 @@
 set -euo pipefail
 
 meson setup build \
+  ${MESON_ARGS} \
   --wrap-mode=nodownload \
-  --libdir=lib \
-  -Dprefix="${PREFIX}" \
   -Dsystemd=disabled \
   -Dselinux=disabled \
   -Dxml_docs=disabled \
@@ -12,6 +11,6 @@ meson setup build \
 
 meson compile -C build
 if [[ $(uname) != Darwin ]]; then
-  meson test -C build
+  meson test -C build --print-errorlogs
 fi
 meson install -C build
