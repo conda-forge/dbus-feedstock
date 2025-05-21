@@ -19,19 +19,11 @@ coordinate process lifecycle; it makes it simple and reliable to code a "single
 instance" application or daemon, and to launch applications and daemons on
 demand when their services are needed.
 
-
 Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/dbus-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/dbus-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
