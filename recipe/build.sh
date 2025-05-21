@@ -10,7 +10,7 @@ meson setup build \
   -Dlaunchd_agent_dir="${PREFIX}"
 
 meson compile -C build
-if [[ $(uname) != Darwin ]]; then
+# if [[ $(uname) != Darwin ]]; then
   meson test -C build --print-errorlogs
-fi
+# fi
 meson install -C build
