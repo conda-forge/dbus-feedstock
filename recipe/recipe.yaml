@@ -21,8 +21,6 @@ source:
 build:
   number: 0
   skip: win
-  skip_compile_pyc:
-    - share/doc/dbus/examples/GetAllMatchRules.py
 
 requirements:
   build:
