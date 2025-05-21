@@ -11,7 +11,7 @@ source:
   url: http://dbus.freedesktop.org/releases/dbus/dbus-${{ version }}.tar.xz
   sha256: 0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2
   patches:
-    - if: linux:
+    - if: linux
       then:
         - patches/0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch
         - patches/0002-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch
