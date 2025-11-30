@@ -54,7 +54,7 @@ about:
     instance" application or daemon, and to launch applications and daemons on
     demand when their services are needed.
   homepage: http://www.freedesktop.org/wiki/Software/dbus/
-  repository: git://anongit.freedesktop.org/dbus/dbus
+  repository: https://gitlab.freedesktop.org/dbus/dbus
   documentation: https://www.freedesktop.org/wiki/IntroductionToDBus/
 
 extra:
